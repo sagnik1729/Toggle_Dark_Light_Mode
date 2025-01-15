@@ -1,0 +1,110 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+    overflow: hidden; /* Ensure the body does not scroll */
+}
+
+/* Light Mode */
+body.light-mode {
+    background-color: #f7f7f7;
+    color: #333;
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #000000;
+    color: #f7f7f7;
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Container styling */
+.container {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centering vertically */
+    align-items: center;      /* Centering horizontally */
+}
+
+/* Text Styling */
+#mode-text {
+    font-size: 3rem; /* Large font size */
+    margin-bottom: 20px;
+}
+
+/* Toggle container styling */
+.toggle-container {
+    width: 120px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 30px;
+}
+
+/* Toggle button styling */
+.toggle-btn {
+    width: 52px;
+    height: 52px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: transform 0.3s ease;
+}
+
+/* Dark Mode toggle container */
+body.dark-mode .toggle-container {
+    background-color: #333;
+}
+
+body.dark-mode .toggle-btn {
+    transform: translateX(60px); /* Full slide to the right */
+}
+
+/* Creative Animations */
+.toggle-btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(72, 184, 114, 0.6);
+}
+
+/* Sun or Moon Image Styling */
+.sun-moon-image {
+    position: absolute;
+    top: 20px;
+    right: -60px; /* Initially outside the screen */
+    width: 200px;
+    height:200px;
+    background-size: cover;
+    background-position: center;
+    transition: right 0.3s ease-in-out; /* Slide in effect */
+}
+
+/* Light Mode Sun image */
+body.light-mode .sun-moon-image {
+    background-image: url('sun.jpg'); /* Sun image for light mode */
+    right: 20px;
+}
+
+/* Dark Mode Moon image */
+body.dark-mode .sun-moon-image {
+    background-image: url('moon.jpeg'); /* Moon image for dark mode */
+    right: 20px; /* Move to top right corner */
+}
